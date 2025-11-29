@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-function NavBottom() {
+function NavBottom( {searchData, query}) {
 
     const topics = ["Nepal", "Startup", "Innovations", "Finance&Economics", "Geopolitics"];
     
@@ -11,7 +11,13 @@ function NavBottom() {
         <Boss>
             {
                 topics.map((value, index) => 
-                    <Options href="#" key={index}>{value}</Options>
+                    <Options href="#" 
+                            key={index} 
+                            
+                            onClick={()=> 
+                            searchData(value)}>
+                        {value}
+                    </Options>
                 )
             }
         </Boss>

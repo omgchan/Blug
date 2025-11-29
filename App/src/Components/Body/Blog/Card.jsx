@@ -1,12 +1,11 @@
-
 import styled from 'styled-components'
 import Button from '../../Button/Button';
 import { BASE_URL } from '../../../App';
 
-
-function Card({photo, date, category, title, description}) {
+// ADD onClick TO THE PROPS
+function Card({photo, date, category, title, description, onClick}) {
   return (
-    <CardComponent>
+    <CardComponent onClick={onClick}>
       <div className="image">
         <img src={photo} alt="blog" />
       </div>
@@ -35,7 +34,6 @@ function Card({photo, date, category, title, description}) {
 
 export default Card
 
-
 const CardComponent = styled.div`
   width: 360px;
   background: #ffffff;
@@ -44,6 +42,7 @@ const CardComponent = styled.div`
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   position: relative;
   transition: box-shadow 0.3s ease;
+  cursor: pointer;  /* ADD CURSOR POINTER */
 
   /* Tail shadow effect */
   &::after {
@@ -117,7 +116,6 @@ const CardComponent = styled.div`
     margin-bottom: 12px;
     line-height: 1.3;
     transition: color 0.2s ease;
-    cursor: pointer;
 
     &:hover {  
       color: #dc2626;

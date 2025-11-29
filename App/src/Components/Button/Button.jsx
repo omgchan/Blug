@@ -2,9 +2,9 @@ import React from 'react'
 import { PiGreaterThanBold } from "react-icons/pi";
 import styled from 'styled-components';
 
-function Button() {
+function Button({onClick}) {
   return (
-    <Buton>
+    <Buton onClick={onClick}>
       READ MORE 
       <PiGreaterThanBold  className='right'/>
     </Buton>

@@ -67,17 +67,21 @@ const Right = styled.div`
   width: 40px;
   height: 40px;
 `;
-
-const Navbar = () => {
+const Navbar = ({ closeMenu, searchData, query}) => {
   return (
     <NavContainer>
       <Left>
-        <MdMenu />
-        <input type="text" placeholder="Search..." />
+        <MdMenu onClick={closeMenu} />
+        <input onChange={(e) => searchData(e.target.value)}
+              type="text" 
+              value={query}
+              placeholder="Search..." />
       </Left>
 
       <Center>
-        <a href=""><img src="/images/Blug.svg" alt="Logo" /></a>  
+        <a href="">
+          <img src="/images/Blug.svg" alt="Logo" />
+        </a>
       </Center>
 
       <Right />
